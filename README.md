@@ -2,10 +2,15 @@
 
 Use the kubeflow-cluster located in the kubeflow-cluster folder to create a kubernetes cluster for kubeflow purposes. The folder contains yaml files which can be executed using ansible in order to create a fully functional kubernetes cluster. The version of kubernetes used in this configuration is v1.21 (this version is also the kubectl and kubeadm version). 
 To execute the yaml files with ansible playbooks simple run:
+
+-------------------------------------------------------
 ansible-playbook -i hosts initial.yml
 ansible-playbook -i hosts kube-dependencies.yml
 ansible-playbook -i hosts master.yml
-check the master node using the kubectl get nodes
+
+check the master node using the 
+kubectl get nodes
+
 Wait for the master node to become Ready and then execute
 ansible-playbook -i hosts kube-workers.yml
 Check the kubernetes nodes by executing kubectl get nodes
